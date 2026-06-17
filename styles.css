@@ -1,0 +1,43 @@
+/* ===== Stitched Up — global + responsive layer ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #141312;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #ece9e3;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+::selection { background: #F59E0B; color: #141312; }
+input::placeholder { color: #6b6760; }
+
+@keyframes su-blink { 0%,100% { opacity: 1 } 50% { opacity: .25 } }
+@keyframes su-tape { from { background-position: 0 0 } to { background-position: 113px 0 } }
+
+/* hover / focus interactions (replace DC style-hover / style-focus) */
+.su-statehead:hover { background: #1f1d1a; }
+.su-askbtn:hover { border-color: #F59E0B; color: #F59E0B; }
+.su-share:hover { border-color: #F59E0B; color: #F59E0B; }
+.su-input:focus { border-color: #F59E0B; }
+
+/* ---- responsive layer (mobile-first primary interface) ---- */
+@media (max-width: 720px) {
+  .su-sec { padding-top: 56px !important; padding-bottom: 56px !important; }
+  .su-pad { padding-left: 18px !important; padding-right: 18px !important; }
+  .su-nav { padding-left: 16px !important; padding-right: 16px !important; }
+  .su-navcta { font-size: 12px !important; letter-spacing: .8px !important; padding: 10px 13px !important; }
+  .su-grid2 { grid-template-columns: 1fr !important; }
+  .su-split { grid-template-columns: 1fr !important; }
+  .su-splitL { border-right: none !important; border-bottom: 1px solid #2a2724 !important; }
+  .su-stamp { font-size: 19px !important; padding: 3px 11px !important; border-width: 3px !important; }
+  .su-timeline { grid-template-columns: 1fr !important; gap: 0 !important; text-align: left !important; }
+  .su-tline { display: none !important; }
+  .su-titem { display: grid !important; grid-template-columns: 30px 1fr !important; gap: 14px !important; align-items: start !important; text-align: left !important; padding-bottom: 22px !important; position: relative; }
+  .su-titem .su-tdot { margin: 0 !important; }
+  .su-titem.su-tcon::before { content: ""; position: absolute; left: 14px; top: 30px; bottom: 0; border-left: 2.5px dashed #B91C1C; }
+}
+@media (max-width: 420px) {
+  .su-navcta { font-size: 0 !important; padding: 11px 14px !important; }
+  .su-navcta::after { content: "Ask →"; font-size: 13px; letter-spacing: 1px; }
+}
